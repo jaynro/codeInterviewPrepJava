@@ -3,16 +3,21 @@ import java.util.*;
 class Program {
   public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
 
-    
+    int[] a = array.stream()
+                            .mapToInt(Integer::intValue)
+                            .toArray();
+    int[] s= array.stream()
+                            .mapToInt(Integer::intValue)
+                            .toArray();
     // SequencePoniter=0
     int j =0;
     
-    //iterate sequence
-    for(int i=0; i<array.length(); i++){
-      if (seq[i]==seq[j])
+    //iterate sequencea
+    for(int i=0; i<a.length; i++){
+      if (a[i]==s[j])
         j++;
   
-      if (j ==sequence.lenhgt() -1)
+      if (j ==s.length -1)
         return true;
         
     }
