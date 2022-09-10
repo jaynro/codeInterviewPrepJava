@@ -2,26 +2,37 @@ import java.util.*;
 
 class Program {
   public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
+    System.out.println("array:  " + array.toString());
+     System.out.println("sequence:  " + sequence.toString());
+    if(array == null || array.size( ) ==0)
+      return false;
 
     int[] a = array.stream()
                             .mapToInt(Integer::intValue)
                             .toArray();
-    int[] s= array.stream()
+    int[] s= sequence.stream()
                             .mapToInt(Integer::intValue)
                             .toArray();
     // SequencePoniter=0
     int j =0;
     
-    //iterate sequencea
+    //iterate sequence
     for(int i=0; i<a.length; i++){
-      if (a[i]==s[j])
+      if (a[i]==s[j]){
+        System.out.println("a[i]:  " +a[i] +"    s[j]:  " +s[j]);
         j++;
+      }
+      System.out.println("j:  " +j);
+      if (j ==s.length )
+        return true;            
   
-      if (j ==s.length -1)
-        return true;
+
         
     }
 
+    System.out.println("j:  " +j);
+    if (j ==s.length )
+      return true;    
 
     //no records found    
     return false;
