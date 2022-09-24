@@ -2,7 +2,9 @@ import java.util.*;
 class Main {
     public static void main(String args[]) {
 
-        System.out.println("case : " +  func(  )); 
+        System.out.println("case : " 
+                           +  func(  )
+                          ); 
     }
     
     public static int func( ){
