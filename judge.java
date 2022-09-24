@@ -16,6 +16,27 @@ class Main {
         System.out.println("case 3: " +  findJudge(new int [][] {{1,3}, {2,3}}  ,3 )  ); 
     }
     
+    public static int findJudgeMine( int[][] trustArray, int n ){
+        // Use array as list, elements go from 1 to n
+        int[] pairScore= new int[n+1]; //fills with zeroes
+        
+        // update pair counting
+        for(int[] pair:trustArray ){
+            pairScore[pair[0]]--;
+            pairScore[pair[1]]++;
+        }
+        
+        //find the findJudge
+        for(int i=0; i < pairScore.length; i ++ ){
+            if(pairScore[i]==n-1 )
+                return i;
+        }
+            
+        // there is no judge
+        return -1;        
+
+    }    
+    
     public static int findJudge( int[][] trustArray, int n ){
         
         // Use the array as a map
