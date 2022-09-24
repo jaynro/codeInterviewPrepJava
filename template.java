@@ -12,4 +12,13 @@ class Main {
         return -1;        
 
     }
+    
+    public static void print(List<Integer> list ){
+        System.out.println();
+        for(int e: list){
+            System.out.println(e);
+            
+        }
+    
+    }    
 }
