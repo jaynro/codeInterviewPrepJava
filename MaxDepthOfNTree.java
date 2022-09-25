@@ -35,24 +35,24 @@ class Main {
         }        
     }
     public static void main(String args[]) {
-         System.out.println("Childred 1 ");
+
         Node node5 = new Node(5);
         Node node6 = new Node(6);
 
         List<Node> children3= new ArrayList<>();
         children3.add(node5);
         children3.add(node6);
-        System.out.println("Childred 1 ");
+
         Node node3 = new Node(3,children3);
         Node node2 = new Node(2);
         Node node4 = new Node(4);
 
- System.out.println("Childred 12 ");
+
         List<Node> children1= new ArrayList<>();
         children1.add(node2);
         children1.add(node3);
         children1.add(node4);
-         System.out.println("Childred 21 ");
+
         
         Node root = new Node(1,children1);
 
@@ -63,28 +63,35 @@ class Main {
     }
     
     public static int maxDepth( Node root){
+        
         if (root == null) return 0;
         
-        int depth=0;
+        System.out.println("Node.value: " +root.value);
         
+        int depth=0;
+
         Queue<Node> queue = new LinkedList();
         queue.offer(root);
-        
+
         while(!queue.isEmpty()){
             int size = queue.size();
             System.out.println("size: " +size);
+            
+                        
             for(int i =0; i<size; i++){
                 Node currentNode = queue.poll();
+                System.out.println("currentNode: " +currentNode.value);
                 for(Node child: currentNode.children){
+                    System.out.println("Child.value: " +child.value);
                     queue.offer(child);
                 }    
-                
+                   
             }
-            
+                
             depth++;
             
         }
-        
+
         return depth;        
 
     }
