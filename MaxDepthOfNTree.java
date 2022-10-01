@@ -77,17 +77,19 @@ class Main {
             int size = queue.size();
             System.out.println("size: " +size);
             
-                        
             for(int i =0; i<size; i++){
                 Node currentNode = queue.poll();
                 System.out.println("currentNode: " +currentNode.value);
-                for(Node child: currentNode.children){
-                    System.out.println("Child.value: " +child.value);
-                    queue.offer(child);
-                }    
+                     
+                if(currentNode.children!=null) {
+                    for(Node child: currentNode.children){
+                        System.out.println("Child.value: " +child.value);
+                        queue.offer(child);
+                    }
+                }
                    
-            }
-                
+            }                        
+
             depth++;
             
         }
